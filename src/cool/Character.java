@@ -1,12 +1,12 @@
 package cool;
 
+import java.awt.*;
+
 public class Character {
 
     private String name;
-    private int hp;
-    private int att;
-    private int jump;
-    private int attS;
+    private int hp, att, jump, attS;
+    public int x, y;
 
     public Character(int hp, int att, int jump, int attS) {
         this.name = "Naexys";
@@ -17,11 +17,12 @@ public class Character {
     }
 
     public void loop() {
-
+        x+=1;
     }
 
-    public void draw() {
-
+    public void draw(Graphics g) {
+        g.setColor(Color.ORANGE);
+        g.fillRect(x, y, 32, 32);
     }
 
     public String getName () {

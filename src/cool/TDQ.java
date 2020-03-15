@@ -10,6 +10,7 @@ public class TDQ extends Canvas implements Runnable {
 
     private Thread thread;
     private boolean running = false;
+    private Character naexys;
 
     public TDQ() {
         JFrame frame = new JFrame("The Diamond Quest II");
@@ -25,6 +26,7 @@ public class TDQ extends Canvas implements Runnable {
         frame.add(this);
         frame.setVisible(true);
         start();
+        naexys = new Character(1, 1, 1, 1);
     }
 
     public synchronized void start() {
@@ -43,7 +45,7 @@ public class TDQ extends Canvas implements Runnable {
     }
 
     public void loop() {
-
+        naexys.loop();
     }
 
     public void draw() {
@@ -58,6 +60,7 @@ public class TDQ extends Canvas implements Runnable {
 
         g.setColor(Color.MAGENTA);
         g.fillRect(0, 0, WIDTH, HEIGHT);
+        naexys.draw(g);
 
         g.dispose();
         bs.show();
